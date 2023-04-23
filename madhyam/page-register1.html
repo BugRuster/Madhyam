@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Create Account Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      form {
+        background-color: #fff;
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0062cc;
+      }
+
+      #error-message {
+        display: none;
+        margin-bottom: 20px;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="signup-form" action="" method="POST">
+      <h2>Create an Account</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="ansh sinha" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="anshsinha346@gmail.com" required>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" value="anshsinha346@gmail.com" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" value="root" required>
+      <button type="submit" onclick="createAccount()">Create Account</button>
+      <div id="error-message"></div>
+    </form>
+
+    <script>
+      function createAccount() {
+        // Get the form elements
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const errorMessage = document.getElementById("error-message");
+
+        // Get the values from the form elements
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        // Check if any field is empty
+        if (!name || !email || !username || !password) {
+          errorMessage.textContent = "All fields are required.";
+          errorMessage.style.display = "block";
+          return false;
+        }
+
+        // Check if the email is valid
+        const emailRegex = ;
+        if (!emailRegex.test(email)) {
+          errorMessage.textContent = "Please enter a valid email address.";
+          errorMessage.style.display = "block";
+          return false
+        }
+
+        // Check if the password is at least 8 characters long
+        if (password.length < 8) {
+          errorMessage.textContent = "Password must be at least 8 characters long.";
+          errorMessage.style.display = "block";
+          return false;
+        }
+    
+        // If all checks pass, redirect to the login page
+        window.location.href = "page-login1.html";
+      }
+    </script>
+</body>
+</html>    
