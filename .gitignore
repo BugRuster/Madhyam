@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+
+# Virtual environment
+venv/
+env/
+
+# React 
+node_modules/
+
+# Log files
+*.log
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Environment variables file
+.env
+
+# Othes
+.DS_Store
